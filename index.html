@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Guide</title>
+    <style>
+
+body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .slider-container {
+            position: relative;
+            max-width: 80%;
+            margin: 40px auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 1s ease-in-out;
+        }
+
+        .slides {
+            min-width: 100%;
+            height: 400px;
+            object-fit: cover;
+            object-position: center;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            user-select: none;
+            z-index: 1;
+        }
+
+        .prev {
+            left: 0;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+        }
+        nav li {
+            display: inline-block;
+            position: relative;
+            margin-left: 100px;
+            padding-top: 20px;
+        }
+        nav a {
+            color: #03045e;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 14px;
+            text-align: center;
+        }
+        nav a:hover {
+            color: #0096c7;
+        }
+        nav a:hover::before {
+            width: 100%;
+        }
+        nav a:before {
+            content: '';
+            height: 5px;
+            background-color: #FFFFFF;
+            position: absolute;
+            top: 0;
+            width: 0%;
+            transition: all ease-in-out 250ms;
+        }
+        img.image {
+            width: 100px;
+            transition: width 4s, transform 4s;
+        }
+        img.image:hover {
+            transform: rotate(20px);
+            width: 200px;
+        }
+        body {
+            background-color: #129490;
+        }
+        .section13 {
+            background-color: #84A59D;
+            text-align: center;
+            padding-bottom: 5px;
+            padding-top: 5px;
+        }
+        .section14 {
+            background-image: url('https://i.gifer.com/DvLr.gif');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: top right;
+            padding-top: 200px;
+            padding-bottom: 150px;
+            width: 100%;
+        }
+        .section15 {
+            background-color: #348734;
+            border-radius: 300px;
+        }
+        .section16 {
+            background-color: #348734;
+            border-radius: 300px;
+        }
+        .section17 {
+            background-color: #6AB8A9;
+            border-radius: 5px;
+            float: right;
+            padding: 5px;
+            color: #298977;
+            font-family: Garamond, sans-serif;
+        }
+        .headertext {
+            font-size: 32px;
+            color: white;
+            font-family: "Georgia", serif;
+            border-radius: 10px;
+        }
+        .welcome-message {
+            text-align: center;
+            font-size: 36px;
+            color: black;
+            font-family: "Georgia", serif;
+            background-color: white;
+            opacity: 0.5;
+            border-radius: 300px;
+        }
+        .section19 {
+            text-align: center;
+            color: pink;
+            background-color: white;
+            opacity: 0.5;
+            font-size: 10px;
+            border: 5px;
+            padding: 5px;
+            font-family: "Garamond", serif;
+        }
+       .table-container {
+            display: flex;
+            justify-content: space-around;
+    
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 1000px;
+            margin: 40px auto;
+            gap: 20px;
+        }
+        .column {
+            width: 30%;
+            padding: 15px;
+            background-color: #f0f4ff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .column h2 {
+            font-size: 1.4em;
+            color: #333;
+            border-bottom: 2px solid #0073e6;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        .column ul {
+            list-style: none;
+            padding: 0;
+            line-height: 1.8;
+        }
+        .column li {
+            margin: 12px;
+        }
+        .column a {
+            text-decoration: none;
+            color: #0073e6;
+               }
+        .column a:hover {
+            color: #005bb5;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #5A7684;
+            color: #fff;
+        }
+        .google-map iframe {
+            width: 60%;
+            height: 700px;
+            text-align: centre;
+            border-radius: 60px;
+        }
+    </style>
+</head>
+<body>
+
+
+
+<div class="section13">
+    <div class="headertext"><strong>Visit <img src="https://tse1.mm.bing.net/th?id=OIP.okx0MM5YKnjbPKNFxrgRSgHaFY&pid=Api&rs=1&c=1&qlt=95&w=143&h=103" height="40" width="45"> Norway</strong></div>
+</div>
+
+<div class="slider-container">
+        <div class="slider">
+            <img class="slides" src="https://www.nordicvisitor.com/images/norway/the-harbour-in-bergen-at-night.jpg" alt="Image 1">
+            <img class="slides" src="https://th.bing.com/th/id/OIP.cajj3EHVDu2uaN1II0tt3wHaFC?rs=1&pid=ImgDetMain" alt="Image 2">
+            <img class="slides" src="https://th.bing.com/th/id/OIP.8vG-JzXjeS3MHyAkWsprBgHaE8?rs=1&pid=ImgDetMain" alt="Image 3">
+            <img class="slides" src="https://th.bing.com/th/id/R.3c4e0ce3dfcd76e727f63fe6b2bcc5a1?rik=cXmFrlOAyaOa8A&riu=http%3a%2f%2ftraveltips.nettavisen.no%2fwp-content%2fuploads%2f2015%2f03%2fNorge.jpg&ehk=JzF5nr7%2bkg%2fDzmygi%2bZhOs2OJ8N0q5MlYz1%2fLoun3BA%3d&risl=&pid=ImgRaw&r=0" alt="Image 4">
+        </div>
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function changeSlide(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            let slides = document.getElementsByClassName("slides");
+            if (n > slides.length) { slideIndex = 1; }
+            if (n < 1) { slideIndex = slides.length; }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
+        }
+
+        setInterval(() => { changeSlide(1); }, 5000);
+    </script>
+
+
+<nav>
+    <ul>
+        <li><a href="websiteeh.html" target="_blank">Home</a></li>
+        <li><a href="aboutus.html" target="_blank">About</a></li>
+        <li><a href="contactinfow.html" target="_blank">Contact</a></li>
+    </ul>
+</nav>
+
+<div class="section17">
+    <button>Login</button>
+</div>
+
+<br><br>
+
+<div class="section14">
+    <div class="welcome-message">
+        <font size='9px'><strong>MAKE LIFE AN<br><b>ADVENTURE</b></font>
+        <br>
+        <font size='3px'>Welcome to Norway</font>
+    </div>
+</div>
+
+<div class="section16"></div>
+
+<br><br>
+
+<div class="section19">
+    <font size='3px' color='black'>
+        The Kingdom of Norway is a sovereign nation on the Scandinavian peninsula in northern Europe.
+        <br>
+        Denmark, Norway and Sweden together make up Scandinavia, while the Scandinavian countries plus Finland and Iceland are collectively known as the Nordic countries.
+    </font>
+</div>
+
+<br><br><br><br>
+
+<font size='30px' color='#D7C9AA'>
+    Explore Norway~
+</font>
+
+<br><br>
+
+<div class="google-map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14304534.17984066!2d-2.859564764980642!3d63.0643614888205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x461268458f4de5bf%3A0xa1b03b9db864d02b!2sNorway!5e1!3m2!1sen!2sin!4v1711707468986!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+<br><br>
+<hr>
+
+<div class="section20" style="background-color: #F2F2F2; padding: 40px; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0);">
+    <h1 style="color: #129490; font-size: 32px; font-weight: bold; text-align: center;">YOU'RE GOING TO LOVE NORWAY!</h1>
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+        <div style="flex: 0 0 50%; max-width: 50%; padding-right: 20px;">
+            <h2 style="color: #0096c7; font-size: 24px; font-weight: bold;"><a href='https://en.wikipedia.org/wiki/Aurora' target="_blank">Aurora Borealis</a></h2>
+            <p style="font-size: 16px; line-height: 1.6;">Did you know that you can experience the northern lights already from late September until late March? Northern Norway is dark from afternoon until late morning, and the northern lights frequently soar across the sky. Our bold claim is that this part of Norway, with its multiple islands, deep fjords, and steep mountains, is among the world's most beautiful and interesting places to see the northern lights.</p>
+        </div>
+        <div style="flex: 0 0 40%; max-width: 40%; padding-left: 20px;">
+            <img src="https://www.canvasprintsaustralia.net.au/wp-content/uploads/2018/02/Aurora-Lights-iceland-s-copy.jpg" alt="Aurora Borealis" style="width: 100%; border-radius: 10px;">
+        </div>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; margin-top: 20px;">
+        <div style="flex: 0 0 40%; max-width: 40%; padding-right: 20px;">
+            <img src="https://m.smedata.sk/api-media/media/image/spectator/9/12/12669/12669_1200x.jpg?rev=2" alt="Beautiful Fjords" style="width: 100%; border-radius: 10px;">
+        </div>
+        <div style="flex: 0 0 50%; max-width: 50%; padding-left: 20px;">
+            <h2 style="color: #0096c7; font-size: 24px; font-weight: bold;"><a href='https://en.wikipedia.org/wiki/Norwegian_cuisine' target="_blank">Norwegian cuisine</a></h2>
+            <p style="font-size: 16px; line-height: 1.6;">Millions of people around the world regularly enjoy seafood from Norway. Our country is known for its cold, clean waters, which provide the perfect habitat for countless species of fish, clams and shellfish. Inland Norway is home to hundreds of rivers and lakes, and the Norwegian coastline offers excellent deep-sea fishing.
+
+                Catching and preparing top-quality fish has always been a key part of Norwegian culture. Tørrfisk, dried cod or stockfish, and clipfish, both made of the Arctic cod, called skrei, have been a major export for centuries, and has more recently been joined by a thriving industry in fresh salmon.</p>
+        </div>
+    </div>
+</div>
+
+<br><br><br>
+
+ <div class="table-container">
+        <div class="column">
+            <h2>Places to go</h2>
+            <ul>
+                <li><a href="https://www.visitnorway.com/places-to-go/" target="_blank">Places to go</a></li>
+                <li><a href="https://www.visitnorway.com/places-to-go/eastern-norway/oslo/" target="_blank">Oslo</a></li>
+                <li><a href="https://www.visitnorway.com/places-to-go/eastern-norway/" target="_blank">Eastern Norway</a></li>
+                <li><a href="https://www.visitnorway.com/fjord-norway/" target="_blank">Fjord Norway</a></li>
+                <li><a href="https://www.norway-lights.com/northern-norway/" target="_blank">Northern Norway</a></li>
+            </ul>
+        </div>
+        <div class="column">
+            <h2>Things to do</h2>
+            <ul>
+                <li><a href="https://www.visitnorway.com/things-to-do/" target="_blank">Things to do</a></li>
+                <li><a href="https://www.visitnorway.com/things-to-do/family-fun/" target="_blank">Family fun</a></li>
+                <li><a href="https://www.visitnorway.com/things-to-do/nature-attractions/midnight-sun/" target="_blank">Midnight sun</a></li>
+                <li><a href="https://www.visitnorway.com/things-to-do/nature-attractions/fjords/" target="_blank">Fjords</a></li>
+                <li><a href="https://www.visitnorway.com/things-to-do/outdoor-activities/" target="_blank">Outdoor activities</a></li>
+            </ul>
+        </div>
+            
+
+<br><br><br><br><br>
+
+
+<footer>
+    To learn more, click <a href="https://www.britannica.com/place/Norway" target="_blank">this</a> link!
+</footer>
+
+</body>
+</html>
